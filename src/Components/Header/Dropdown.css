@@ -1,0 +1,115 @@
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100px;
+    position: relative;
+    margin: 0px 20px;
+    padding: 10px 0px;
+    /* user-select: none !important; */
+}
+
+.dropdown>button {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(39, 38, 38) !important;
+    border: 0.1px solid #4848482c;
+}
+
+.dropdown>.dropdown-content {
+    transition: 0.1s ease all;
+    animation: dropdown 0.1s linear 1 forwards;
+    position: absolute;
+    top: 120%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: column;
+    width: 200px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    z-index: 1;
+    /* background: linear-gradient(45deg, #ffffff, #e6e6e6); */
+    background-color:  rgb(255, 255, 255);
+    border: 1px solid #00000021;
+}
+
+.dropdown>.dropdown-content>div>p {
+    color: #6c6c6c;
+    font-weight: bold;
+}
+
+.dropdown>.dropdown-content>div>.subdropdown>button {
+    background-color: transparent;
+    padding: 5px;
+    border: 0.1px solid #4848482c;
+    width: 80px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #313131;
+    cursor: pointer;
+}
+
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.dropdown>.dropdown-content>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.dropdown>.dropdown-content>div>.subdropdown {
+    position: relative;
+}
+
+.dropdown>.dropdown-content>div>.subdropdown>.subcontent {
+    transition: 0.1s ease all;
+    animation: dropdown 0.1s linear 1 forwards;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    background-color: transparent;
+    padding: 0;
+}
+
+.dropdown>.dropdown-content>div>.subdropdown>.subcontent>ul {
+    list-style: none;
+    padding: 0 !important;
+    width: 150px;
+    background-color: #fff;
+    border: 1px solid #4f4f4f32;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown>.dropdown-content>div>.subdropdown>.subcontent>ul>li {
+    padding: 5px;
+    cursor: pointer;
+    margin: 0;
+    transition: 0.1s linear all;
+}
+
+.dropdown>.dropdown-content>div>.subdropdown>.subcontent>ul>li:hover {
+    background-color: #000;
+    color: #fff;
+}
